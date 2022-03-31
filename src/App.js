@@ -29,6 +29,7 @@ function App() {
         跟射击有关的
         <br/>
         <a href={"https://www.nssf.org/shooting/targets/"}>可打印靶纸PDF下载</a>
+        <br/>
         买猎票
         <br/>
         <a href={"https://www.permis-permits.ec.gc.ca/en/PurchaseHuntingPermit"}>购买联邦鸟票</a>
