@@ -17,7 +17,7 @@ class Ftr extends Component {
                             </li>
                             <li>
                                 <a href="https://reginawildlifefederation.com/rwf-range-property-conduct/">
-                                    北靶场规定
+                                    东靶场规定
                                 </a>
                             </li>
                         </ul>
@@ -80,6 +80,11 @@ class Ftr extends Component {
                             <li>
                                 <a href="https://www.amazon.ca/dp/B07CG54ZXH/ref=cm_sw_em_r_mt_dp_HXSBVWBRYANSM76KBVTP?_encoding=UTF8&psc=1">
                                     观靶镜
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.cabelas.ca/product/34149/cabelas-dry-storage-ammunition-box">
+                                    子弹箱
                                 </a>
                             </li>
                         </ul>
