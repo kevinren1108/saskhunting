@@ -1,94 +1,127 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styles from '../../styles/Home.module.css'
 
-class Home extends Component {
-    
-    render() { 
-        return (
-            <div>
-                买枪
-                <ul>
-                    <li>
-                        <a href={"https://www.rangeviewsports.ca/"}>华威枪店</a>
-                    </li>
-                    <li>
-                        <a href={"https://www.gotenda.com/"}>腾达枪店</a>
-                    </li>
-                    <li>
-                        <a href={"https://g4cgunstore.com/"}>G4C枪店</a>
-                    </li>
-                    <li>
-                        <a href={"https://www.cabelas.ca/"}>坎贝拉</a>
-                    </li>
-                    <li>
-                        <a href={"https://www.prairieguntraders.ca/"}>小镇枪店(里贾纳往南50km)</a>
-                    </li>
-                    <li>
-                        <a href={"https://tntgunworks.com/"}>Tnt枪店(里贾纳市内)</a>
-                    </li>
-                    <li>
-                        <a href={"https://bit.ly/3qSwSgM"}>私人之间枪支转让收据范本</a>
-                    </li>   
-                </ul>
-                靶场
-                <ul>
-                    <li>
-                        <a href={"https://rfgl.net/"}>北靶场</a>
-                    </li>
-                    <li>
-                        <a href={"https://reginawildlifefederation.com/"}>东靶场</a>
-                    </li>
-                    <li>
-                        <a href={"http://www.reginatrapandskeet.com/"}>飞碟靶场</a>
-                    </li>
-                </ul>         
-                跟射击有关的
-                <ul>
-                    <li>
-                        <a href={"/ftr"}>第一次去靶场</a>
-                    </li>
-                    <li>
-                        <a href={"https://www.nssf.org/shooting/targets/"}>可打印靶纸PDF下载</a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/watch?v=g7ZA7oiN3E0">如何安装瞄准镜（视频)</a>
-                    </li>
-                    <li>
-                        <a href="https://zh.wikihow.com/%E6%A0%A1%E5%87%86%E6%AD%A5%E6%9E%AA">如何校准瞄准镜（图文版)</a>
-                    </li>
-                    <li>
-                        <a href="https://www.bilibili.com/read/cv11567223"> 如何校准瞄准镜（理论硬核版）</a>                  
-                    </li>
-                </ul>
-                买猎票
-                <ul>
-                    <li>
-                        <a href={"https://www.permis-permits.ec.gc.ca/en/PurchaseHuntingPermit"}>购买联邦鸟票</a>
-                    </li>
-                    <li>
-                        <a href={"https://www.saskatchewanhal.ca/licensing.page"}>购买萨省猎票</a>
-                    </li>
-                    <li>
-                        <a href={"http://environment.gov.sk.ca/adx/aspx/adxGetMedia.aspx?DocID=3365f7b7-c444-4170-be39-4ef629d041c4"}>萨省猎票购买及使用指南</a>
-                    </li>
-                </ul>
-                狩猎指南
-                <ul>
-                    <li>
-                        <a href={"https://publications.saskatchewan.ca/api/v1/products/68827/formats/93283/download"}>2022年萨省狩猎指南</a>
-                    </li>
-                </ul>
-                法律相关
-                <ul>
-                    <li>
-                        <a href={"https://pubsaskdev.blob.core.windows.net/pubsask-prod/2841/W13-1r1.pdf"}>野生动物管理法</a>
-                    </li>
-                    <li>
-                    <a href={"https://pubsaskdev.blob.core.windows.net/pubsask-prod/archived/37041/1930-CH-208.pdf"}>猎物法</a>
-                    </li>
-                </ul>
-            </div>
-        );
-    }
-}
+export default function Home() {
+    return (
+      <div className={styles.container}>
+  
+        <main className={styles.main}>
+          <h1 className={styles.title}>
+            Welcome to Saskatchewan
+          </h1>
+  
+          <p className={styles.description}>
+            Get you a firearm licence
+          </p>
+  
+          <div className={styles.grid}>
+            <a href="https://prairiefirearmstraining.ca/" className={styles.card}>
+              <h2>Prairie Firearms Training</h2>
+              <p>With over 40 years of hunting and shooting experience, James bring a wealth of knowledge to the table and provide a safe and fun process to get you PAL/RPAL firearm licence in Regina.</p>
+            </a>
+  
+            <a href="https://saskhuntered.com/" className={styles.card}>
+              <h2>Saskatchewan Association For Firearm Education</h2>
+              <p>SAFE is a non-profit association of volunteer instructors with a common purpose of promoting safe, ethical hunting as a way of life and the shooting sports as safe, worthwhile forms of recreation. </p>
+            </a>
+          </div>
+  
+          <p className={styles.description}>
+            Pruches your firearm
+          </p>
+  
+          <div className={styles.grid}>
+            <a href="https://www.rangeviewsports.ca/" className={styles.card}>
+              <h2>Rangeviewe Sports &rarr;</h2>
+              <p>Rangeview Sports is a renowned Online Gun Store & Shop in Canada offering a wide range of products in-store and online. Visit us in Newmarket, Ontario.</p>
+            </a>
+  
+            <a
+              href="https://g4cgunstore.com/"
+              className={styles.card}
+            >
+              <h2>G4C GUN STORE &rarr;</h2>
+              <p>G4C is a Firearms, Ammunition and Shooting Supplies retail store in Markham, Ontario. We are dedicated to serve firearm enthusiasts in Canada.</p>
+            </a>
+  
+            <a
+              href="https://www.prairieguntraders.ca/"
+              className={styles.card}
+            >
+              <h2>Prairie Gun Traders &rarr;</h2>
+              <p>
+                Prairie Gun Traders is a locally owned and operated gun shop located in Avonlea, Saskatchewan approximately 45 minutes outside of Regina and Moose Jaw.
+              </p>
+            </a>
+  
+            <a
+              href="https://tntgunworks.com/"
+              className={styles.card}
+            >
+              <h2>TnT Gunworks Ltd. &rarr;</h2>
+              <p>
+                New and Used Firearms Sales · Custom Pistol & Rifle Work · Factory Ammunition & Reloading Supplies · Hot Bluing and Refinishing Services
+              </p>
+            </a>
+  
+            <a
+              href="https://www.cabelas.ca/"
+              className={styles.card}
+            >
+              <h2>Cabelas &rarr;</h2>
+              <p>Quality Hunting, Fishing, Camping and Outdoor Gear at competitive prices.</p>
+            </a>
+  
+            <a href="https://www.gotenda.com/" className={styles.card}>
+              <h2>Tenda Canada &rarr;</h2>
+              <p>Retail & Online Gun Store</p>
+            </a>
+  
+          </div>
+  
+          <p className={styles.description}>
+            Go to shoting range
+          </p>
+  
+          <div className={styles.grid}>
+  
+            <a
+              href="https://rfgl.net/"
+              className={styles.card}
+            >
+              <h2>Regina Fish & Game League &rarr;</h2>
+              <p>
+                The Regina Fish & Game League is a 1500 member strong non-profit corporation based in Regina Saskatchewan. The range is located on the north side of Regina about 25km.
+              </p>
+            </a>
+  
+            <a
+              href="https://reginawildlifefederation.com/"
+              className={styles.card}
+            >
+              <h2>Regina Wildlife Federation &rarr;</h2>
+              <p>
+              The RWF is a non-profit wildlife conservation organization. The range is located on the east side of Regina about 25km.
+              </p>
+            </a>
+  
+            <a
+              href="http://www.reginatrapandskeet.com/"
+              className={styles.card}
+            >
+              <h2>Regina Trap & Skeet Club &rarr;</h2>
+              <p>
+                The Regina Trap and Skeet Club (RTSC) is an excellent venue for shotgun enthusiasts to engage in both trap and skeet shooting. The range is located on the north side of Regina.
+              </p>
+            </a>
+  
+          </div>
+        </main>
+  
+        <footer className={styles.footer}>
+          
+        </footer>
+      </div>
+    );
+  }
  
-export default Home;

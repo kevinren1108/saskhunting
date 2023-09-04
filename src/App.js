@@ -1,16 +1,21 @@
 import React from "react";
 import Home from "./pages/home";
-import Ftr from "./pages/firstTimeRange";
+import Toolbar from "./components/toolbar.js";
 import { Route, Routes} from "react-router-dom";
-
+import Account from "./pages/account";
 
 function App() {
+
+ 
   return (
     <div className="App">
-      <Routes>
-          <Route path="/" exact element={<Home />}></Route>
-          <Route path="/ftr" exact element={<Ftr />}></Route>
-      </Routes>   
+      {/* check if at the account page */}
+      {/* { location.pathname === "/account" ? <></>: <Toolbar /> } */}
+      <Toolbar />
+        <Routes>
+            <Route path="/" exact element={<Home />}></Route>
+            <Route path="/account" exact element={<Account />} ></Route>
+        </Routes>   
     </div>
   );
 }
