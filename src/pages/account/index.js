@@ -6,6 +6,7 @@ import { faQrcode, faLock, faKey } from '@fortawesome/fontawesome-free-solid'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faMobile, faSms, faDesktop} from '@fortawesome/free-solid-svg-icons'
 import QRCode from 'react-qr-code'
+import validator from 'validator'
 
 function Account() {
 
@@ -19,8 +20,9 @@ function Account() {
     const [verf, setVerf] = useState("")
     const [loginFail, setLoginFail] = useState(false)
     const [alertMsg, setAlertMsg] = useState("")
-    
-
+    const [getCodeText, setGetCodeText] = useState("Get Code")
+    const [counter, setCounter] = React.useState(60);
+    const [intervalId, setIntervalId] = React.useState(null)
     //qrToken should fetch from backend, backend TBD
     const qrToken = "99885e8a13d2b4d79c71ba3008ce1515"
 
@@ -46,16 +48,42 @@ function Account() {
         setAlertMsg("")
     }
 
+    function handleSmsCodeSend(){
+        if(!phone || !validator.isMobilePhone(phone)){
+            setAlertMsg("Incorrect Phone or Verification Code")
+        }else if( counter < 60 && counter >= 0 ){
+            setAlertMsg("Resend Verification Code in " + counter + "s")
+        }else if( counter < 0){
+            setAlertMsg("")
+            setCounter(60)
+        }
+        else{
+            setAlertMsg("")
+            timer()
+        }
+    }
+
+    function timer () {
+        if (counter > 0) {
+            const id = setInterval(() => {
+                setCounter(counter => counter - 1)
+            }, 1000);
+            setIntervalId(id)
+            
+        }
+    }
+
     function verifyInput(){
         if(pwLoginView){
-            if(!userName || !password || loginFail){
+            if(!userName || !password || loginFail || !validator.isEmail(userName)){
                 setAlertMsg("Incorrect Username or Password")
             }else{
                 setAlertMsg("")
             }
         }
+        
         if(smsLoginView){
-            if(!phone || !verf || loginFail){
+            if(!phone  || !verf || loginFail ||  !validator.isMobilePhone(phone)){
                 setAlertMsg("Incorrect Phone or Verification Code")
             }else{
                 setAlertMsg("")
@@ -68,6 +96,7 @@ function Account() {
             <div className={styles.header}>
                 <div className={styles.header_logo}>
                     <Link to="/">Saskatchewan Hunting</Link>
+                    <h2 className={styles.sub_logo}>Hunting on The Truly Land of Living Skies</h2>
                 </div>
             </div>
             <div style={{ background: "linear-gradient(#0d69c1, 83%, #917922)" }}>
@@ -175,8 +204,8 @@ function Account() {
                                                     
                                                     <input className={styles.fm_text}
                                                         tabIndex={1}
-                                                        aria-label='Username/Email/Phone'
-                                                        placeholder='Username/Email/Phone'
+                                                        aria-label='Email'
+                                                        placeholder='Email'
                                                         onChange={e => setUserName(e.target.value)}
                                                     ></input>
 
@@ -233,7 +262,9 @@ function Account() {
                                                     <div className={styles.send_btn}>
                                                         <a 
                                                             href={() => false}
-                                                            className='send_btn_link'>
+                                                            className='send_btn_link'
+                                                            onClick={handleSmsCodeSend}
+                                                        >
                                                             Get Code
                                                         </a>
                                                     </div>
