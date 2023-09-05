@@ -130,10 +130,7 @@ function Account() {
                                         //qr code login tool tip
                                         <div className={styles.login_tip}>
                                             <div className={styles.poptip}>
-                                                <div className={styles.poptip_arrow}>
-                                                    <em></em>
-
-                                                </div>
+                                               
                                                 <div className={styles.poptip_content}>
                                                     Login with QR code
                                                 </div>
